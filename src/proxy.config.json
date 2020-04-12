@@ -1,0 +1,8 @@
+{
+    "/myapi/*": {
+        "target": "http://106.51.38.64:9999",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

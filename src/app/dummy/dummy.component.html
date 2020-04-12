@@ -1,0 +1,92 @@
+
+<div class="main"><h1><b>Invoice</b> </h1>
+<!-- Site Data {{siteData.responseCode}} <br>
+Block data {{blockData.responseCode}}<br>
+flate data{{flateData.responseCode}}<br>
+floor data {{floorData.responseCode}}<br>
+gst data {{gstData.responseCode}}<br> -->
+<!-- {{5- 8}} -->
+<!-- {{floorData.responseCode}} -->
+<div *ngFor="let cool of floorData.responseObjList">
+       {{cool.floorId}}  {{cool.floorName}}  {{cool.floorId}}
+       
+      
+</div>
+
+
+<br>
+<!-- <div *ngFor="let mydata of invoiceForm.modiCostDtlsRequests">
+       {{mydata.length}}
+       </div> -->
+       <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+                  <!-- {{invoiceForm.value | json}} -->
+              <div class="one">
+                     
+                     <label>Site : </label>
+                     <select  formControlName="siteName" placeholder="select" ngModel>
+                                   <option *ngFor="let site of siteData.responseObjList">{{ site.siteName }}</option>
+                                   <!-- <option value="usa">siteTwo</option>
+                                   <option value="england">siteThree</option> -->
+                     </select>
+
+                     <label>Block : </label>
+                     <select formControlName="blockIds" placeholder="select" ngModel>
+                                   <option value="india">blockOne</option>
+                                   <option value="usa">blockTwo</option>
+                                   <option value="england">blockThree</option>
+                     </select>
+                     
+                     <label>Floor : </label>
+                     <select  formControlName="floorIds" placeholder="select" ngModel>
+                                   <option value="india">floorOne</option>
+                                   <option value="usa">floorTwo</option>
+                                   <option value="england">floorThree</option>
+                     </select>
+                     
+                     <label>Flate : </label>
+                     <select  formControlName="flatIds" placeholder="select" ngModel>
+                                   <option value="india">flateOne</option>
+                                   <option value="usa">flateTwo</option>
+                                   <option value="england">flateThree</option>
+                     </select>
+              </div>
+
+              <div class="name"> </div>                   
+              <div class="two" formArrayName="modiCostDtlsRequests">
+                     
+                                   <table>
+                                   <thead>  <tr>
+                                          <th>S.No</th> 
+                                          <th>Details of modification</th>
+                                          <th>Units</th>
+                                          <th>Quantity</th>
+                                          <th>Rate</th>
+                                          <th>Base Amount</th>
+                                          <!-- <th> </th>
+                                          <th>  </th> -->
+                                   </tr>
+                                   </thead>   <tbody *ngFor="let invoice of Invoice; let i = index;">          
+                            
+                                      <tr  formGroupName="i" >
+                                        
+                                          <td><input type="text" formControlName="sno_(i)" ngModel></td>
+                                          <td><input type="text" formControlName="modificationChargeDesc(i)" ngModel></td>
+                                          <td><input type="text" formControlName="units(i)" ngModel></td>
+                                          <td><input type="text" formControlName="quantity(i)" ngModel></td>
+                                          <td><input type="text" formControlName="rate(i)" ngModel></td>
+                                          <td><input type="text" formControlName="basicAmount(i)" readonly  [ngModel]=""></td>  
+                                          <td> <button type="button" mat-raised-button class="button1" (click)="addInvoiceForm()" >+</button></td>
+                                          <td> <button type="button" class="button2" mat-raised-button (click)="removeInvoiceForm(i)">-</button></td>
+                                      </tr>
+                                   
+                                   
+                            </tbody>  
+                                   </table>   
+                           
+                            </div>
+                            <div style="text-align: center;">
+                            <button class="button3" mat-raised-button type="submit"> Raise </button>
+                            </div>
+       </form>
+        
+       </div>

@@ -1,0 +1,38 @@
+{
+    "responseCode": 200,
+    "status": null,
+    "sessionKey": null,
+    "errors": null,
+    "description": "success",
+    "responseObjList": [
+        {
+            "flatId": null,
+            "flatNo": null,
+            "floorId": null,
+            "floorName": null,
+            "blockId": null,
+            "blockName": null,
+            "siteId": 107,
+            "siteName": "Sumadhura Eden Garden",
+            "stateId": null,
+            "flatBookingId": null,
+            "customerName": null
+        },
+        {
+            "flatId": null,
+            "flatNo": null,
+            "floorId": null,
+            "floorName": null,
+            "blockId": null,
+            "blockName": null,
+            "siteId": 111,
+            "siteName": "Sumadhura Nandanam",
+            "stateId": null,
+            "flatBookingId": null,
+            "customerName": null
+        }
+    ],
+    "notificationResponses": null,
+    "isNotificationResponsesAvailable": null,
+    "ticketEscalationResponses": null
+}
